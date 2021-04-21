@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+    dev:
+        build: .
+        stdin_open: true
+        volumes:
+            - ../../:/usr/src/node-container/binded-workspace
+        working_dir: /usr/src/node-container/binded-workspace

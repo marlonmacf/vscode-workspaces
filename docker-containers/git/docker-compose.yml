@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+    dev:
+        build: .
+        stdin_open: true
+        volumes:
+            - ../../:/usr/src/git-container/binded-workspace
+        working_dir: /usr/src/git-container/binded-workspace

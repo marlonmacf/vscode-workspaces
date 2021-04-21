@@ -1,0 +1,48 @@
+[
+    {
+        "$match": {
+            "device": {
+                "$in": [
+                    "B61699438"
+                ]
+            },
+            "date": {
+                "$gte": {
+                    "$date": "2019-12-16T00:00:00.000Z"
+                },
+                "$lte": {
+                    "$date": "2020-01-24T00:00:00.000Z"
+                }
+            }
+        }
+    },
+    {
+        "$match": {
+            "registers.f": {
+                "$ne": [],
+                "$exists": false
+            }
+        }
+    },
+    {
+        "$match": {
+            "registers.bin": {
+                "$ne": [],
+                "$exists": 0
+            }
+        }
+    },
+    {
+        "$match": {
+            "registers.m": {
+                "$in": [
+                    "AF",
+                    "CCF",
+                    "CCF-C",
+                    "MCF-U",
+                    "MCM"
+                ]
+            }
+        }
+    }
+]
